@@ -356,4 +356,66 @@ a {
 
 a:hover {
     opacity: 0.8;
+
+}
+
+/* MOBILE TEST LAYOUT */
+
+@media (max-width: 768px) {
+
+    /* Remover altura forçada */
+    section {
+        min-height: auto;
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    /* Header */
+    header {
+        padding: 15px 20px;
+    }
+
+    header h1 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    /* Esconde o nome vertical */
+    .background-name {
+        display: none;
+    }
+
+    /* BIO vertical */
+    .biografia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* FOTO */
+    .biografia img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 14px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    /* CARD DE TEXTO */
+    .biografia-texto {
+        width: 100%;
+        background: linear-gradient(145deg, #000, #111);
+        padding: 25px;
+        border-radius: 16px;
+        font-size: 15px;
+        line-height: 1.7;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    /* Remover margens laterais */
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
 }
