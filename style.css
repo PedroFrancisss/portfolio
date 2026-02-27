@@ -1,0 +1,359 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #1f1f1f 0%,
+        #2a2a2a 40%,
+        #242424 70%,
+        #1a1a1a 100%
+    );
+    color: white;
+}
+/* ================= HEADER FIXO ================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    padding: 20px 0;
+    z-index: 1;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.drive-link img {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+.drive-link img:hover {
+    transform: scale(1.2);
+
+}
+.wpp-link img {
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.wpp-link img:hover {
+    transform: scale(1.2);
+}
+/* Linha animada */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* Hover */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ================= SEÇÕES ================= */
+
+.secao {
+  
+    padding-top: 140px; 
+    padding-left: 30px;
+    padding-bottom: 20px;
+    width: 1200px;
+    margin: 0 auto;
+    
+}
+
+/* BIOGRAFIA layout */
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.conteudo {
+    position: relative;
+}
+
+.conteudo::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 479px;
+    height: 100%;
+    border: 3px solid rgba(255,255,255,0.2);
+}
+.foto {
+    width: 480px;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+  
+}
+
+
+.texto {
+    background: linear-gradient(
+        145deg,
+        rgba(0,0,0,0.95),
+        rgba(20,20,20,0.95)
+    );
+    right: 100px;
+    padding: 30px;
+    max-width: 700px;
+    line-height: 1.8;
+    font-size: 18px;
+    text-align: justify;
+
+    border-left: 4px solid white;
+
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.6);
+
+    position: relative;
+}
+
+/* ================= LINK ATIVO (SÓ CSS) ================= */
+
+/* Remove sublinhado padrão */
+nav a {
+    border-bottom: 2px solid transparent;
+}
+
+/* ================= CARREIRA - TIMELINE ================= */
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Linha central */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: white;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 40px 60px;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-content {
+    background: black;
+    padding: 30px;
+    position: relative;
+}
+
+/* Bolinha */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+}
+
+.timeline-item.left::before {
+    right: -8px;
+}
+
+.timeline-item.right::before {
+    left: -8px;
+}
+
+.ano {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+.timeline-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= MEU TRABALHO ================= */
+.titulo-secao1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-top: 80px;
+}
+.trabalhos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px 60px;
+}
+
+.trabalho-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.trabalho-item img {
+    width: 150px;
+    height: auto;
+    display: block;
+    
+     box-shadow:
+        5px 5px 0px rgba(255, 255, 255, 0.08),
+        5px 5px 30px rgba(0, 0, 0, 0.6);
+
+    transition: transform 0.3s ease;
+}
+.trabalho-item:hover img {
+    transform: translate(-4px, -4px);
+}
+
+.trabalho-info {
+    max-width: 300px;
+}
+
+.titulo-box {
+    border: 2px solid white;
+    padding: 8px 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.trabalho-info p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ================== formaçao ================= */
+
+.formacao-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.formacao-item {
+    background: black;
+    padding: 40px;
+    flex: 1;
+    min-height: 250px;
+}
+
+.formacao-item h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.formacao-item p {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* ================= FUNDO PEDRO ================= */
+
+.background-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 120px;
+    letter-spacing: 10px;
+    color: rgba(255, 255, 255, 0.05);
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-40%) rotate(180deg);
+    writing-mode: vertical-rl;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+a {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
